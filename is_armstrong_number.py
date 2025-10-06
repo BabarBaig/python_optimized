@@ -19,12 +19,17 @@ def is_armstrong_number(number: int) -> bool:
     return gen_num == number
 
 
-def main():
-    print(sys.argc)
-    print(sys.argv)
-    if len(sys.arv) != 2:
+def main() -> int:
+    if len(sys.argv) != 2:
         print(f'Usage: python {sys.argv[0]} <number>', file=sys.stderr)
-    print(is_armstrong_number(153))
+        return 1
+    try:
+        number = int(sys.argv[1])
+    except ValueError:
+        print(f'Argument [{sys.argv[1]}] must be an integer.', file=sys.stderr)
+        return 2
+    print(is_armstrong_number(int(sys.argv[1])))
+    return 0
 
 
 if __name__ == '__main__':
