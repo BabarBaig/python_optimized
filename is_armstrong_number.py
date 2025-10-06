@@ -28,7 +28,7 @@ def main() -> int:
     except ValueError:
         print(f'Argument [{sys.argv[1]}] must be an integer.', file=sys.stderr)
         return 2
-    print(is_armstrong_number(number))
+    print(f'Testing if {[number]} is an Armstrong Number returns: {is_armstrong_number(number)}')
     return 0
 
 
